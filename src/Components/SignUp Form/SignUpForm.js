@@ -10,19 +10,19 @@ export default function SignUpForm() {
                         <Card>
                             <CardBody>
                             <Form>
-                                <FormGroup className="mr-4 row">
                                 <div className="input-group">
-                                    <Col lg={6}>
+                                <FormGroup className="mr-4">
                                     <Label for="firstName">First Name</Label>
                                     <Input type="text" name="firstName" />
-                                    <Label for="lastName">Last Name</Label>
-                                    <Input type="text" name="lastName" />
-                                    </Col>
-                                </div>
                                 </FormGroup>
                                 <FormGroup>
+                                    <Label for="lastName">Last Name</Label>
+                                    <Input type="text" name="lastName" />
+                                </FormGroup>
+                                </div>
+                                <FormGroup>
                                     <Label for="email">Email</Label>
-                                    <Input type="email" name="username" className="is-valid"/>
+                                    <Input type="email" name="username" />
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="password">Password</Label>

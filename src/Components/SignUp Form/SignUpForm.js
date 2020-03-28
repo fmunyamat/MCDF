@@ -10,25 +10,25 @@ export default function SignUpForm(props) {
                         <Card>
                             <CardBody>
                             <Form>
-                                <FormGroup className="mr-4">
-                                    <Label for="firstName">First Name</Label>
-                                    <Input type="text" name="firstName" onChange={props.firstName}/>
+                                <FormGroup>
+                                    <Label className="required" for="firstName">First Name</Label>
+                                    <Input type="text" name="firstName" onChange={props.firstName} required/>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="lastName">Last Name</Label>
-                                    <Input type="text" name="lastName" onChange={props.lastName}/>
+                                    <Label className="required" for="lastName">Last Name</Label>
+                                    <Input type="text" name="lastName" onChange={props.lastName} required/>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="email">Email</Label>
-                                    <Input type="email" name="username" onChange={props.email}/>
+                                    <Label className="required" for="email">Email</Label>
+                                    <Input type="email" name="username" onChange={props.email} required/>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="password">Password</Label>
-                                    <Input type="password" name="password" onChange={props.password}/>
+                                    <Label className="required" for="password">Password</Label>
+                                    <Input type="password" name="password" onChange={props.password} required/>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="password">Confirm Password</Label>
-                                    <Input type="password" name="confirmPassword" onChange={props.confirmPass}/>
+                                    <Label className="required" for="password">Confirm Password</Label>
+                                    <Input type="password" name="confirmPassword" onChange={props.confirmPass} required/>
                                 </FormGroup>
                                 <Button className="btn btn-primary" onClick={props.handleClick}>Sign Up</Button>
                             </Form>

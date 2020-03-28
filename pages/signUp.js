@@ -13,6 +13,7 @@ export default function SignUp() {
     const [password, setPassword] = useState(null);
     const [confirmPass, setConfirmPass] = useState(null);
 
+    // Set each input field to the values the user types.
     const handleInput = {
         firstNameInput: (e) => setFirstName(e.target.value),
         lastNameInput: (e) => setLastName(e.target.value),
@@ -21,6 +22,7 @@ export default function SignUp() {
         confirmPassInput: (e) => setConfirmPass(e.target.value)   
     }
 
+    // Create user on
     const handleSubmit = () => {
 
         let userInfo = {
@@ -30,10 +32,15 @@ export default function SignUp() {
             password
         }
 
-        if (password !== confirmPass) {
+        if (firstName === null || lastName === null || email === null || password === null || confirmPass === null) {
+
+            alert('Please completely fill in the required fields before continuing.')
+
+        } else if (password !== confirmPass) {
             alert('The two passwords do not match. Please try again.')
 
             console.log('failed');
+
         } else {
             
             axios({
@@ -41,9 +48,10 @@ export default function SignUp() {
                 url: '/api/signUp',
                 data: userInfo
               });
-            
 
-            console.log('success');
+            console.log('Sign up successful');
+
+            location.replace('/login')
         }
         
     }

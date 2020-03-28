@@ -6,3 +6,8 @@ body {
 a {
     margin-left: 10px;
 }
+
+.required:after {
+    content:" *";
+    color: red;
+}

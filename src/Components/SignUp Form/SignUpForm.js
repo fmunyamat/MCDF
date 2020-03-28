@@ -16,19 +16,19 @@ export default function SignUpForm(props) {
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="lastName">Last Name</Label>
-                                    <Input type="text" name="lastName" />
+                                    <Input type="text" name="lastName" onChange={props.lastName}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="email">Email</Label>
-                                    <Input type="email" name="username" />
+                                    <Input type="email" name="username" onChange={props.email}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="password">Password</Label>
-                                    <Input type="password" name="password" />
+                                    <Input type="password" name="password" onChange={props.password}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="password">Confirm Password</Label>
-                                    <Input type="password" name="confirmPassword" />
+                                    <Input type="password" name="confirmPassword" onChange={props.confirmPass}/>
                                 </FormGroup>
                                 <Button className="btn btn-primary" onClick={props.handleClick}>Sign Up</Button>
                             </Form>

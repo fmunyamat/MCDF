@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/router';
 import Navbar from '../src/Components/Navbar/Navbar';
 import SignUpForm from '../src/Components/SignUp Form/SignUpForm';
-import { Container, Row, Col, Form, FormGroup, Label, Input, Card, CardBody, Button } from "reactstrap";
 import axios from 'axios';
 
 
@@ -13,6 +13,8 @@ export default function SignUp() {
     const [password, setPassword] = useState(null);
     const [confirmPass, setConfirmPass] = useState(null);
 
+    const router = useRouter();
+
     // Set each input field to the values the user types.
     const handleInput = {
         firstNameInput: (e) => setFirstName(e.target.value),
@@ -22,8 +24,10 @@ export default function SignUp() {
         confirmPassInput: (e) => setConfirmPass(e.target.value)   
     }
 
-    // Create user on
+    // Create user when signing up
     const handleSubmit = () => {
+        
+        let emailVal = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
 
         let userInfo = {
             first_name: firstName,
@@ -36,7 +40,12 @@ export default function SignUp() {
 
             alert('Please completely fill in the required fields before continuing.')
 
+        } else if (emailVal.test(email) === false) {
+
+            alert('Please enter a valid email address.')
+
         } else if (password !== confirmPass) {
+
             alert('The two passwords do not match. Please try again.')
 
             console.log('failed');
@@ -51,7 +60,7 @@ export default function SignUp() {
 
             console.log('Sign up successful');
 
-            location.replace('/login')
+            router.push('/login');
         }
         
     }

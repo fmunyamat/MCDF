@@ -13,7 +13,7 @@ export default function SignUp() {
     const [password, setPassword] = useState(null);
     const [confirmPass, setConfirmPass] = useState(null);
 
-    const router = useRouter();
+    
 
     // Set each input field to the values the user types.
     const handleInput = {
@@ -26,7 +26,8 @@ export default function SignUp() {
 
     // Create user when signing up
     const handleSubmit = () => {
-        
+
+        const router = useRouter();
         let emailVal = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
 
         let userInfo = {
@@ -35,15 +36,18 @@ export default function SignUp() {
             email,
             password
         }
-
+        
+        // If any fields are empty, throw error
         if (firstName === null || lastName === null || email === null || password === null || confirmPass === null) {
 
             alert('Please completely fill in the required fields before continuing.')
-
+        
+        // If email is not in the right format, throw error
         } else if (emailVal.test(email) === false) {
 
             alert('Please enter a valid email address.')
-
+        
+        // If password and confirm password do not match, throw error 
         } else if (password !== confirmPass) {
 
             alert('The two passwords do not match. Please try again.')

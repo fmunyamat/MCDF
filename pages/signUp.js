@@ -13,7 +13,7 @@ export default function SignUp() {
     const [password, setPassword] = useState(null);
     const [confirmPass, setConfirmPass] = useState(null);
 
-    
+    const router = useRouter();
 
     // Set each input field to the values the user types.
     const handleInput = {
@@ -25,9 +25,10 @@ export default function SignUp() {
     }
 
     // Create user when signing up
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
 
-        const router = useRouter();
+        e.preventDefault();
+        
         let emailVal = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
 
         let userInfo = {
@@ -57,7 +58,7 @@ export default function SignUp() {
         } else {
             
             axios({
-                method: 'post',
+                method: 'POST',
                 url: '/api/signUp',
                 data: userInfo
               });

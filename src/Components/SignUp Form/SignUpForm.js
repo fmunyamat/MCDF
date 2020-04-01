@@ -30,7 +30,7 @@ export default function SignUpForm(props) {
                                     <Label className="required" for="password">Confirm Password</Label>
                                     <Input type="password" name="confirmPassword" onChange={props.confirmPass} required/>
                                 </FormGroup>
-                                <Button className="btn btn-primary" onClick={props.handleClick}>Sign Up</Button>
+                                <Button type="submit" className="btn btn-primary" onClick={props.handleClick}>Sign Up</Button>
                             </Form>
                             </CardBody>
                         </Card>

@@ -1,9 +1,10 @@
-body {
-    background-color: blue;
-    font-size: 200px;
+.mcdfBanner{
+    width: 900px;
+    margin: 20px 0 0 40px;
+    border-radius: 18px;
 }
 
-a {
+.loginLink {
     margin-left: 10px;
 }
 
@@ -11,3 +12,48 @@ a {
     content:" *";
     color: red;
 }
+
+.link {
+    margin: 0 !important;
+}
+
+.signUpLink {
+    padding-top: 20px;
+}
+
+button {
+    background-color: #007bff !important;
+}
+
+.userAccountContainer {
+    height: 97.4vh;
+}
+
+.userAccountMenu {
+    background-color: rgb(238, 238, 238);
+    height: 97.4vh;
+}
+
+.loginLink {
+    padding-top: 20px;
+}
+
+/* .navLinks a{
+    margin-left: 10px;
+} */
+/* 
+.yellow {
+    background-color: yellow;
+}
+
+.green{
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+} */

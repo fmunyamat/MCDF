@@ -26,20 +26,10 @@ export default function Login() {
             method: 'POST',
             url: '/api/login',
             data: {
-                emailInput: email,
-                passwordInput: password
+                email,
+                password
             }
-          }).then(function(response){
-            
-            console.log(response);
-            
-            if (response.data === 'NO USER' || response.data === "DOESN'T EXIST") { 
-                // alert('Email and password combination is invalid. Please try again.')
-              } else {
-                // router.push('/useraccount');
-              };
-              
-          });
+          })
 
         
     }

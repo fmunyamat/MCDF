@@ -5,7 +5,8 @@
     "database": "mcdf_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "secret_key": "_cLpn0M4D3jSeMyksyNutqWP4brAhVDCx9mZ3M0noPDbm40vZIai1pK51gd7Jq9rK4h62h8apvh9doyh3WxC6MPphxObmu9fQ1d8hFkndnvbiWv9okmZ6U9G0o9f-r_HOeg_5fCbjkfGKJiHvOt93mee6v55EPkIsv7JWWVqNlU"
   },
   "test": {
     "username": "root",

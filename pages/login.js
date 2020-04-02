@@ -31,17 +31,17 @@ export default function Login() {
             }
           }).then(function(response){
             
-              if (response.data.res === 'EXISTS') {
-                  router.push('/useraccount')
+            console.log(response);
+            
+            if (response.data === 'NO USER' || response.data === "DOESN'T EXIST") { 
+                // alert('Email and password combination is invalid. Please try again.')
               } else {
-                  alert('Email and password combination is invalid. Please try again.')
+                // router.push('/useraccount');
               };
               
           });
 
-        // bcrypt.compare(myPlaintextPassword, hash, function(err, result) {
-        //     // result == true
-        // });
+        
     }
 
     return (

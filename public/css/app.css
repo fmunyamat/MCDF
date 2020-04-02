@@ -1,20 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 .mcdfBanner{
-    width: 900px;
-    margin: 20px 0 0 40px;
+    width: 80vw;
+    height: auto;
+    /* margin: 0 0 0 40px; */
     border-radius: 18px;
 }
 
-.loginLink {
-    margin-left: 10px;
+.fontIcon {
+    margin-right: 5px;
 }
+
+.loginLink {
+    position: absolute;
+    top: 20px;
+    left: 84vw;
+    justify-content: space-evenly;
+    /* margin-top: 20px; */
+    background-color: #536d48;
+    color: white;
+    font-family: 'Raleway';
+    padding: 10px 20px;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.loginLink a {
+    color: white;
+}
+
+.loginLink a:hover {
+    color: white;
+}
+
+.navLinks {
+    display: flex;
+    font-family: 'Raleway';
+    padding: 80px 0 0 0;
+    justify-content: space-evenly;
+}
+
+.navLinkItem {
+    color: rgb(75, 74, 74);
+
+}
+
+.donateBanner {
+    font-family: 'Raleway';
+    background-color: #536d48;
+    margin-top: 20px;
+    padding: 35px 0 20px 0;
+}
+/* 
+.donateBanner p {
+    float: left;
+} */
 
 .required:after {
     content:" *";
     color: red;
 }
 
-.link {
-    margin: 0 !important;
+.links {
+    margin-top: 20px;
 }
 
 .signUpLink {
@@ -32,10 +80,6 @@ button {
 .userAccountMenu {
     background-color: rgb(238, 238, 238);
     height: 97.4vh;
-}
-
-.loginLink {
-    padding-top: 20px;
 }
 
 /* .navLinks a{

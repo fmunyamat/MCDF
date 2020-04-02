@@ -1,6 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Navbar from '../src/Components/Navbar/Navbar';
 import SignUpForm from '../src/Components/SignUp Form/SignUpForm';
 import axios from 'axios';
 
@@ -72,7 +71,6 @@ export default function SignUp() {
 
     return (
         <>
-            <Navbar />
             <SignUpForm firstName={handleInput.firstNameInput} 
                         lastName={handleInput.lastNameInput} 
                         email={handleInput.emailInput} 

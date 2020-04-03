@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function Navbar() {
+export default function Navbar(props) {
 
     return (
         <>
@@ -11,7 +11,7 @@ export default function Navbar() {
                 <Row className="yellow">
                     <Col>
                         <div className="loginLink">
-                            <FontAwesomeIcon icon={faUserCircle} className="fontIcon"/><Link href="/login"><a>Login/SignUp</a></Link>
+                            <FontAwesomeIcon icon={faUserCircle} className="fontIcon"/><Link href="/login"><a>{props.loginText}</a></Link>
                         </div>
                     </Col>
                 </Row>

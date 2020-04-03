@@ -14,11 +14,18 @@ export default async function (req, res) {
 
     const result = await bcrypt.compare(req.body.password, user.password)
 
+    console.log('THIS IS A STRING!!!!!!!!!!!!!!!',result);
+    
     if (result) {
         const token = jwt.sign({ id: user.id, firstName: user.first_name, lastName: user.last_name, email: user.email }, config[env].secret_key)
-        res.json({ token });
+        res.json({
+            id: user.id,
+            email: user.email,
+            token });
     } else {
-        res.end('Login Failed');
+        console.log('WALT NEEDS TO REPAY ME FOR GETTING MY NAME WRONG THIS ENTIRE TIME');
+        
+        res.status(401).send('Login Failed');
     }
 
 }

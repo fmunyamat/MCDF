@@ -1,14 +1,7 @@
 import '../public/css/app.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fas } from '@fortawesome/free-brands-svg-icons';
-// import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function MyApp({ Component, pageProps }) {
-
-  // library.add(fas, faUserCircle)
 
     return (
     <Component {...pageProps} />)

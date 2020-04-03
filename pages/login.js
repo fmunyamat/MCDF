@@ -19,9 +19,6 @@ export default function Login() {
 
         e.preventDefault();
 
-        // console.log(email);
-        // console.log(password);
-
         axios({
             method: 'POST',
             url: '/api/login',
@@ -29,8 +26,13 @@ export default function Login() {
                 email,
                 password
             }
+          }).then(response => {
+              console.log(response.data);
+              localStorage.setItem('token',response.data.token);
+              document.cookie = `access_token=${response.data.token}`;
+              router.push('/useraccount');
+              return response.data;
           })
-
         
     }
 

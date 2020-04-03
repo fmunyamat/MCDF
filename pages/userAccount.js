@@ -4,7 +4,6 @@ import AccountDashboard from '../src/Components/User Account/AccountDashboard';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import jwt from 'jsonwebtoken';
-import config from '../config/config.json';
 const env = process.env.NODE_ENV || 'development';
 
 export default function UserAccount(props) {
@@ -12,8 +11,6 @@ export default function UserAccount(props) {
     const [userData, setUserData] = useState();
     const [loginName, setLogin] = useState('Login/Sign Up')
     const router = useRouter();
-
-    // const tokenLength = localStorage.getItem('token').length
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
@@ -30,19 +27,17 @@ export default function UserAccount(props) {
                 }
             })
             .then(res => {
-                console.log(res);
-
                 if (res.data.status === 401) {
                     router.push('/login');
                 } else {
-                    // console.log(res.data);
-                    setUserData(res.data)
+                    console.log(res.data);
+                    setUserData(res.data);
+                    setLogin(`${res.data.firstName} ${res.data.lastName}`)
+
                 }
 
             })
     }, [])
-
-    // console.log(tokenLength);
 
     return (
         <>
@@ -57,8 +52,9 @@ export async function getServerSideProps(context) {
     let result;
 
     try {
-        result = jwt.verify(context.req.headers.cookie.slice(13), config[env].secret_key)
+        result = jwt.verify(context.req.headers.cookie.slice(13), process.env.secret_key)
         console.log(result);
+        
     } catch (e) {
         console.log(e);
     }

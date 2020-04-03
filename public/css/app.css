@@ -4,27 +4,27 @@
     width: 80vw;
     height: auto;
     /* margin: 0 0 0 40px; */
-    border-radius: 18px;
+    border-radius: 20px;
+    margin: 30px 0 0 25px;
 }
 
 .fontIcon {
     margin-right: 5px;
 }
 
-.loginLink {
-    position: absolute;
+.loginToggle {
+    background-color: #536d48 !important;
+    /* position: relative;
     top: 20px;
-    left: 84vw;
-    justify-content: space-evenly;
-    /* margin-top: 20px; */
-    background-color: #536d48;
-    color: white;
-    font-family: 'Raleway';
-    padding: 10px 20px;
-    border-radius: 50px;
-    z-index: 1;
+    left: 85vw; */
+    border-radius: 50px !important;
+    margin: 30px 6.7vw;
+    float: right;
 }
 
+.dropdown-item {
+    background-color: white;
+}
 .loginLink a {
     color: white;
 }
@@ -36,13 +36,13 @@
 .navLinks {
     display: flex;
     font-family: 'Raleway';
-    padding: 80px 0 0 0;
+    padding: 10px 0 0 0;
     justify-content: space-evenly;
 }
 
 .navLinkItem {
     color: rgb(75, 74, 74);
-
+    font-size: 18px;
 }
 
 .donateBanner {
@@ -68,9 +68,19 @@
 .signUpLink {
     padding-top: 20px;
 }
+.donateBanner button {
+    background-color: #e7fafe;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Raleway';
+    padding: 30px 50px;
+    margin: -15px 0 0 -40px;
+}
 
-button {
-    background-color: #007bff !important;
+.donateBanner p {
+    font-size: 30px;
+    color: white;
+    padding-left: 400px;
 }
 
 .userAccountContainer {
@@ -81,23 +91,3 @@ button {
     background-color: rgb(238, 238, 238);
     height: 97.4vh;
 }
-
-/* .navLinks a{
-    margin-left: 10px;
-} */
-/* 
-.yellow {
-    background-color: yellow;
-}
-
-.green{
-    background-color: green;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.red {
-    background-color: red;
-} */

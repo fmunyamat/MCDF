@@ -14,7 +14,7 @@ export default function Login() {
         emailInput: (e) => setEmail(e.target.value),
         passwordInput: (e) => setPassword(e.target.value)
     }
-    
+
     const handleSubmit = (e) => {
 
         e.preventDefault();
@@ -26,20 +26,20 @@ export default function Login() {
                 email,
                 password
             }
-          }).then(response => {
-              console.log(response.data);
-              localStorage.setItem('token',response.data.token);
-              document.cookie = `access_token=${response.data.token}`;
-              router.push('/useraccount');
-              return response.data;
-          })
-        
+        }).then(response => {
+            
+                localStorage.setItem('token', response.data.token);
+                document.cookie = `access_token=${response.data.token}`;
+                router.push('/useraccount');
+                return response.data;
+
+        }).catch(e => alert('The email and password combination is invalid. Please try again.'))
+
     }
 
     return (
         <>
-            {/* <Navbar /> */}
-            <LoginForm handleClick={handleSubmit} email={handleInput.emailInput} password={handleInput.passwordInput}/>
+            <LoginForm handleClick={handleSubmit} email={handleInput.emailInput} password={handleInput.passwordInput} />
         </>
     )
 }

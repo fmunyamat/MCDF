@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 
 .mcdfBanner{
     width: 80vw;
@@ -18,7 +19,7 @@
     top: 20px;
     left: 85vw; */
     border-radius: 50px !important;
-    margin: 30px 6.7vw;
+    margin: 30px 5.6vw;
     float: right;
 }
 
@@ -73,8 +74,14 @@
     border-radius: 10px;
     color: black;
     font-family: 'Raleway';
-    padding: 30px 50px;
-    margin: -15px 0 0 -40px;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 20px 30px;
+    margin: -19px 0 0 -40px;
+
+    -webkit-box-shadow: 0px 5px 0px 0px rgba(137,197,209,1);
+    -moz-box-shadow: 0px 5px 0px 0px rgba(137,197,209,1);
+    box-shadow: 0px 5px 0px 0px rgba(137,197,209,1);
 }
 
 .donateBanner p {

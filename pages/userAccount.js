@@ -1,23 +1,13 @@
-import { useState, useEffect } from 'react';
-import Navbar from '../src/Components/Navbar/Navbar';
-import AccountDashboard from '../src/Components/User Account/AccountDashboard';
-import axios from 'axios';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 import jwt from 'jsonwebtoken';
-const env = process.env.NODE_ENV || 'development';
+import UserAccountNavbar from '../src/Components/User Account Navbar';
+import UserDashboard from '../src/Components/User Dashboard';
 
-export default function UserAccount(props) {
+export default function UserAccount() {
 
-    const [userData, setUserData] = useState();
-    const [loginName, setLogin] = useState('Login/Sign Up')
     const router = useRouter();
-
-    useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            router.push('/login');
-        }
-    })
-
 
     useEffect(() => {
         axios
@@ -30,19 +20,17 @@ export default function UserAccount(props) {
                 if (res.data.status === 401) {
                     router.push('/login');
                 } else {
-                    console.log(res.data);
-                    setUserData(res.data);
-                    setLogin(`${res.data.firstName} ${res.data.lastName}`)
-
+                    // console.log(res.data);
+                    // setUserData(res.data);
+                    // setLogin(`${res.data.firstName} ${res.data.lastName}`)
                 }
-
             })
     }, [])
 
     return (
         <>
-            <Navbar loginText={loginName} />
-            <AccountDashboard />
+            <UserAccountNavbar />
+            <UserDashboard />
         </>
     )
 }

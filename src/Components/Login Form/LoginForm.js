@@ -5,6 +5,7 @@ export default function LoginForm(props) {
 
     return (
         <>
+            <img src="images/homestead.jpg" alt="homestead-pic" className="login-bg"/>
             <Container>
                 <Row>
                     <Col>
@@ -20,11 +21,13 @@ export default function LoginForm(props) {
                                     <Label for="password">Password</Label>
                                     <Input type="password" name="password" onChange={props.password} required/>
                                 </FormGroup>
-                                <Button type="submit" className="btn btn-primary" onClick={props.handleClick}>Login</Button>
-                                {/* <Link href="/forgotpass"><a>Forgot Password?</a></Link> */}
+                                <div className="loginBtnDiv">
+                                <Button type="submit" className="loginBtn" onClick={props.handleClick}>Login</Button>
                                 <br/>
                                 <br/>
                                 <Link href="/signup"><a>Don't have an account? Create one!</a></Link>
+                                </div>
+                                {/* <Link href="/forgotpass"><a>Forgot Password?</a></Link> */}
                             </Form>
                             </CardBody>
                         </Card>

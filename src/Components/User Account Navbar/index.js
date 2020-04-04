@@ -6,10 +6,10 @@ import { faUserCircle, faPray } from '@fortawesome/free-solid-svg-icons';
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
 
-export default function Navbar(props) {
+export default function UserAccountNavbar(props) {
 
     const [login, setLogin] = useState("");
-    const [ dropdownShow, setDropdownShow ] =useState(false)
+    const [dropdownShow, setDropdownShow] = useState(false)
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(prevState => !prevState);
@@ -17,10 +17,8 @@ export default function Navbar(props) {
 
     async function logout() {
         localStorage.clear();
-        document.cookie= 'access_token=""'
+        document.cookie = 'access_token=""'
         router.push('/');
-
-        window.location.reload()
     }
 
     async function loginButtonText() {
@@ -51,30 +49,27 @@ export default function Navbar(props) {
 
     return (
         <>
-            <Container fluid="true">
+            <Container fluid="true" className="ua-container">
                 <Row>
                     <Col>
-                        <Link href="/"><a><img src="images/banner.png" alt="test" className="img-fluid mcdfBanner" /></a></Link>
+                        <Link href="/"><a><img src="images/logo.jpg" alt="mcdf-logo" className="img-fluid ua-mcdfBanner" /></a></Link>
                     </Col>
-                    <Col>
-                        <Col>
-                        { dropdownShow ? <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                                <DropdownToggle caret className="loginToggle">
-                                    <FontAwesomeIcon icon={faUserCircle} className="fontIcon" /> {login}
-                                </DropdownToggle>
-                                <DropdownMenu>
+                    <Col className="ua-navLinks">
+                        <Link href="/"><a className="navLinkItem">About Us</a></Link>
+                        <Link href="/"><a className="navLinkItem">Sponsorship Opportunities</a></Link>
+                        <Link href="/"><a className="navLinkItem">Contact Us</a></Link>
+                    </Col>
+                    <Col lg={3}>
+                        {dropdownShow ? <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                            <DropdownToggle caret className="loginToggle">
+                                <FontAwesomeIcon icon={faUserCircle} className="fontIcon" /> {login}
+                            </DropdownToggle>
+                            <DropdownMenu>
                                 <Link href="/useraccount"><DropdownItem>My Account</DropdownItem></Link>
-                                    <DropdownItem onClick={()=>logout()}>Logout</DropdownItem>
-                                </DropdownMenu>
-                            </Dropdown> : <Button className="loginToggle" href="/login"><FontAwesomeIcon icon={faUserCircle} className="fontIcon" />{login}</Button>}
-                        </Col>
-                        <Col className="navLinks">
-                            <Link href="/"><a className="navLinkItem">About Us</a></Link>
-                            <Link href="/"><a className="navLinkItem">Sponsorship Opportunities</a></Link>
-                            <Link href="/"><a className="navLinkItem">Contact Us</a></Link>
-                        </Col>
+                                <DropdownItem onClick={() => logout()}>Logout</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown> : <Button className="loginToggle" href="/login"><FontAwesomeIcon icon={faUserCircle} className="fontIcon" />{login}</Button>}
                     </Col>
-
                 </Row>
             </Container>
         </>

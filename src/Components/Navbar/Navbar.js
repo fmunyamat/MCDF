@@ -15,13 +15,12 @@ export default function Navbar(props) {
     const toggle = () => setDropdownOpen(prevState => !prevState);
     const router = useRouter();
 
-    function logout() {
+    async function logout() {
         localStorage.clear();
         document.cookie= 'access_token=""'
         router.push('/');
 
-        console.log(router.pathname);
-        
+        window.location.reload()
     }
 
     async function loginButtonText() {
@@ -37,7 +36,7 @@ export default function Navbar(props) {
 
         useEffect(() => {
             if (!result) {
-                setLogin('Login/Sign');
+                setLogin('Login/Sign Up');
                 setDropdownShow(false);
                 // localStorage.clear();
             } else {
@@ -53,7 +52,7 @@ export default function Navbar(props) {
     return (
         <>
             <Container fluid="true">
-                <Row className="yellow">
+                <Row>
                     <Col>
                         <Link href="/"><a><img src="images/banner.png" alt="test" className="img-fluid mcdfBanner" /></a></Link>
                     </Col>

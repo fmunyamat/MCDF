@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../src/Components/Navbar/Navbar';
 import DonateBanner from '../src/Components/Donate Banner';
+import CarouselSlideshow from '../src/Components/Carousel';
 import axios from 'axios';
 
 export default function Index() {
@@ -27,6 +28,7 @@ export default function Index() {
     <>
       <Navbar />
       <DonateBanner />
+      <CarouselSlideshow/>
     </>
   )
 }

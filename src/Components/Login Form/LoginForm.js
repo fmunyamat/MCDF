@@ -11,6 +11,7 @@ export default function LoginForm(props) {
                         <Card>
                             <CardBody>
                             <Form>
+                                <img src='images/logo.jpg' className="loginLogo"/>
                                 <FormGroup>
                                     <Label for="email">Email</Label>
                                     <Input type="email" name="username" placeholder="johndoe@gmail.com" onChange={props.email} required/>

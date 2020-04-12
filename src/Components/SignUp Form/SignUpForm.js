@@ -4,12 +4,14 @@ export default function SignUpForm(props) {
 
     return (
         <>
+            <img src="images/homestead.jpg" alt="homestead-pic" className="signUp-bg"/>
             <Container>
                 <Row>
                     <Col>
-                        <Card>
+                        <Card className="signUpCard">
                             <CardBody>
                             <Form>
+                                <img src='images/logo.jpg' className="loginLogo"/>
                                 <FormGroup>
                                     <Label className="required" for="firstName">First Name</Label>
                                     <Input type="text" name="firstName" onChange={props.firstName} required/>
@@ -30,7 +32,9 @@ export default function SignUpForm(props) {
                                     <Label className="required" for="password">Confirm Password</Label>
                                     <Input type="password" name="confirmPassword" onChange={props.confirmPass} required/>
                                 </FormGroup>
-                                <Button type="submit" className="btn btn-primary" onClick={props.handleClick}>Sign Up</Button>
+                                <div className="signUpBtnDiv">
+                                <Button type="submit" className="signUpBtn" onClick={props.handleClick}>Sign Up</Button>
+                                </div>
                             </Form>
                             </CardBody>
                         </Card>

@@ -1,6 +1,8 @@
 'use strict';
 
 import user from './user.js';
+import donation from './donation.js';
+import userinfo from './userinfo.js';
 
 const Sequelize = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
@@ -15,7 +17,9 @@ if (config.use_env_variable) {
 }
 
 const db = {
-    user: user(sequelize, Sequelize)
+    users: user(sequelize, Sequelize),
+    donation: donation(sequelize,Sequelize),
+    userinfos: userinfo(sequelize,Sequelize)
 };
 
 Object.keys(db).forEach(modelName => {

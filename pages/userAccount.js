@@ -4,6 +4,7 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import UserAccountNavbar from '../src/Components/User Account Navbar';
 import UserDashboard from '../src/Components/User Dashboard';
+import ContactDetails from '../src/Components/Contact Details';
 
 export default function UserAccount() {
 
@@ -30,7 +31,9 @@ export default function UserAccount() {
     return (
         <>
             <UserAccountNavbar />
-            <UserDashboard />
+            <UserDashboard>
+                <ContactDetails />
+            </UserDashboard>
         </>
     )
 }

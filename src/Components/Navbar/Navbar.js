@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Container, Row, Col, Dropdown, DropdownMenu, DropdownItem, DropdownToggle, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faPray } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
 

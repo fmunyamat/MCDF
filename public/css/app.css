@@ -139,7 +139,7 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
     margin: 0 0 30px 35px;
 }
 
-.login-bg {
+.login-bg, .signUp-bg {
     position: absolute;
     width: 100%;
   height: 100vh;
@@ -148,11 +148,11 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
   -webkit-filter: blur(8px);
 }
 
-.loginBtnDiv {
+.loginBtnDiv, .signUpBtnDiv {
     text-align: center;
 }
 
-.loginBtn {
+.loginBtn, .signUpBtn {
     margin-top: 10px;
     background-color: #536d48 !important;
 }
@@ -171,33 +171,106 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
     border-radius: 10px;
   }
 
-  .ua-dashboardContainer {
-    height: 100vh;
-    width: 100vw;
-    background-color: #025289;
-}
-
-.ua-container {
+.signUpCard {
+    height: 640px;
+    width: 400px;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
     -webkit-box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.67);
     -moz-box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.67);
     box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.67);
+    border-radius: 10px;
 }
 
+/* .ua-container {
+    -webkit-box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.67);
+    box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.67);
+} */
+
+.ua-dashboardContainer {
+    height: 86.5vh;
+    background-color: rgb(223, 223, 223);
+}
 .ua-dashboardTitle {
-    margin: 20px 0 20px 30px;
+    margin: 10px 40px;
+    padding: 10px 0;
     color: white;
-}
-
-.ua-dataDashboard {
-    background-color: white;
-    height: 100vh;
+    background-color: #025289;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    font-weight: 700;
 }
 
 .ua-pillMenu {
     text-align: center;
+    background-color: white;
+    margin: 20px 0 0 40px;
+    height: 69vh;
+    border-radius: 20px;
+    font-family: 'Raleway';
+
+    /* -webkit-box-shadow: -1px 0px 18px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 18px -4px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 18px -4px rgba(0,0,0,0.75); */
+}
+
+.ua-menuLink {
+    margin-top: 50px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
 }
 
 .ua-pillMenu .ua-button {
     margin-top: 50px;
-    font-size: 30px;
+    font-size: 20px;
+    background-color: white;
+    border: 0;
+    color: black;
+}
+
+.row .ua-dataDash {
+    padding: 0;
+    height: 70vh;
+    width: 30vw;
+    border-radius: 10px;
+    margin: 10px 40px 0 30px;
+}
+
+.dashTitle {
+    position: absolute;
+    left: 35px;
+    background-color: #536d48;
+    color: white;
+    font-family: 'Raleway';
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 1;
+
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.75);
+}
+
+.dashDetail {
+    margin-top: 40px;
+    height: 600px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.dashContactInfo {
+    padding: 50px 0 0 35px;
+    /* font-size: 40px; */
+}
+
+.cityField {
+    width: 200px !important;
 }

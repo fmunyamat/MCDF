@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
@@ -7,6 +7,10 @@ import UserDashboard from '../src/Components/User Dashboard';
 import ContactDetails from '../src/Components/Contact Details';
 
 export default function UserAccount() {
+
+    const [ firstName, setFirstName ] = useState("");
+    const [ lastName, setLastName ] = useState("");
+    const [ email, setEmail ] = useState("");
 
     const router = useRouter();
 
@@ -21,6 +25,9 @@ export default function UserAccount() {
                 if (res.data.status === 401) {
                     router.push('/login');
                 } else {
+                    setFirstName(res.data.firstName);
+                    setLastName(res.data.lastName);
+                    setEmail(res.data.email)
                     // console.log(res.data);
                     // setUserData(res.data);
                     // setLogin(`${res.data.firstName} ${res.data.lastName}`)
@@ -32,7 +39,7 @@ export default function UserAccount() {
         <>
             <UserAccountNavbar />
             <UserDashboard>
-                <ContactDetails />
+                <ContactDetails firstName={firstName} lastName={lastName} email={email} />
             </UserDashboard>
         </>
     )

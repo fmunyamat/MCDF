@@ -1,38 +1,85 @@
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(3),
-        width: '60ch',
-      },
-    },
-  }));
 
-export default function ContactDetails() {
-    
-    const classes = useStyles();
+export default function ContactDetails(props) {
 
     return (
         <>
-        <h3 className="dashTitle">Contact Details</h3>
-        <form className={classes.root} noValidate autoComplete="off">
-        <div className="dashDetail">
-            <div className="dashContactInfo">
-            <TextField label="First Name"/>
-            <TextField label="Last Name"/>
-            <TextField label="Email"/>
-            <TextField label="Phone Number"/>
-            <TextField label="Address 1"/>
-            <TextField label="Address 2"/>
-            <TextField className="cityField" label="City"/>
-            <TextField label="State"/>
-            <TextField label="Zip"/>
-            </div>
-        </div>
-        </form>
-        
+            <h3 className="dashTitle">Contact Details</h3>
+            <form className="text-center" action="#!">
+                <div className="dashDetail">
+                    <div className="dashContactInfo">
+                        <div className="form-row">
+                            <div className="col-6">
+                                <div className="md-form">
+                                    <label for="firstName">First name</label>
+                                    <input type="text" className="form-control" value={props.firstName} readonly/>
+                                </div>
+                            </div>
+                            <div className="col-6">
+
+                                <div className="md-form">
+                                    <label for="lastName">Last name</label>
+                                    <input type="email" className="form-control" value={props.lastName} readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-row contactRow2">
+                            <div className="col-6">
+                                <div className="md-form mt-0">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" className="form-control" value={props.email} readonly/>
+                                </div>
+                            </div>
+
+                            <div className="col-6">
+                                <div className="md-form">
+                                    <label for="phoneNumber">Phone Number</label>
+                                    <input type="tel" className="form-control" value={props.phoneNumber} readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-row contactRow2">
+                            <div className="col-6">
+                                <div className="md-form mt-0">
+                                    <label for="address1">Address 1</label>
+                                    <input type="text" className="form-control" value={props.address1} readonly/>
+                                </div>
+                            </div>
+
+                            <div className="col-6">
+                                <div className="md-form">
+                                    <label for="address2">Address 2</label>
+                                    <input type="text" className="form-control" value={props.address2} readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-row contactRow2">
+                            <div className="col-5">
+                                <div className="md-form mt-0">
+                                    <label for="city">City</label>
+                                    <input type="text" className="form-control" value={props.city} readonly/>
+                                </div>
+                            </div>
+
+                            <div className="col-2">
+                                <div className="md-form">
+                                    <label for="state">State</label>
+                                    <input type="text" className="form-control" value={props.state} readonly/>
+                                </div>
+                            </div>
+                            <div className="col-5">
+                                <div className="md-form">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" className="form-control" value={props.zip} readonly/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="contactRow3">
+                        <button className="contactButton">Edit Contact Details</button>
+                    </div>
+                </div>
+            </form>
         </>
     )
 }

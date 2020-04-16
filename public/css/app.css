@@ -267,10 +267,30 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
 }
 
 .dashContactInfo {
-    padding: 50px 0 0 35px;
+    padding: 70px 35px 0 35px;
+    font-family: 'Raleway';
     /* font-size: 40px; */
 }
 
-.cityField {
-    width: 200px !important;
+.contactRow2 {
+    margin-top: 30px;
+}
+
+.dashContactInfo label {
+    font-weight: 700;
+}
+
+.dashContactInfo input {
+    text-align: center;
+}
+
+.contactRow3 .contactButton {
+    margin-top: 40px;
+    background-color: #536d48;
+    color: white;
+}
+
+.contactRow3 .contactButton:hover {
+    background-color: #ccffb6;
+    color: black;
 }

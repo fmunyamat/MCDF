@@ -1,11 +1,18 @@
-export default function ContactDetails(props) {
+import { Button, Modal } from 'react-bootstrap';
+
+export default function ContactModal(props) {
 
     return (
-        <>
-            <h3 className="dashTitle">Contact Details</h3>
+        <div className='modal-div'>
+            <Modal size='lg' show={props.openModal} onHide={props.closeModal}>
+            <Modal.Header closeButton>
+                <Modal.Title>Edit Contact Details</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
             <form className="text-center" action="#!">
-                <div className="dashDetail">
-                    <div className="dashContactInfo">
+                <div className="modal-detail">
+                    <div className="modal-contactInfo">
                         <div className="form-row">
                             <div className="col-6">
                                 <div className="md-form">
@@ -74,11 +81,12 @@ export default function ContactDetails(props) {
                         </div>
                     </div>
                     <div className="contactRow3">
-                        <button type="button" className="contactButton" onClick={props.openModal}>Edit Contact Details</button>
+                        <button type="button" className="contactButton" onClick={props.closeModal}>Save Contact Details</button>
                     </div>
                 </div>
             </form>
-            {props.children}
-        </>
+            </Modal.Body>
+            </Modal>
+        </div>
     )
 }

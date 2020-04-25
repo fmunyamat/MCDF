@@ -5,12 +5,23 @@ import jwt from 'jsonwebtoken';
 import UserAccountNavbar from '../src/Components/User Account Navbar';
 import UserDashboard from '../src/Components/User Dashboard';
 import ContactDetails from '../src/Components/Contact Details';
+import ContactModal from '../src/Components/Contact Modal';
 
 export default function UserAccount() {
 
+    // Contact Details State
     const [ firstName, setFirstName ] = useState("");
     const [ lastName, setLastName ] = useState("");
     const [ email, setEmail ] = useState("");
+    const [ phone, setPhone ] = useState("");
+    const [ address1, setAddress1 ] = useState("");
+    const [ address2, setAddress2 ] = useState("");
+    const [ city, setCity ] = useState("");
+    const [ state, setState ] = useState("");
+    const [ zip, setZip ] = useState("");
+
+    // Edit Contact Details Modal
+    const [ showModal, setShowModal ] = useState(false);
 
     const router = useRouter();
 
@@ -27,7 +38,7 @@ export default function UserAccount() {
                 } else {
                     setFirstName(res.data.firstName);
                     setLastName(res.data.lastName);
-                    setEmail(res.data.email)
+                    setEmail(res.data.email);
                     // console.log(res.data);
                     // setUserData(res.data);
                     // setLogin(`${res.data.firstName} ${res.data.lastName}`)
@@ -35,11 +46,31 @@ export default function UserAccount() {
             })
     }, [])
 
+    const openModal = (e) => {
+        e.preventDefault;
+        setShowModal(true);
+    }
+
+    const closeModal = () => setShowModal(false);
+
     return (
         <>
             <UserAccountNavbar />
             <UserDashboard>
-                <ContactDetails firstName={firstName} lastName={lastName} email={email} />
+                <ContactDetails firstName={firstName}
+                                lastName={lastName}
+                                email={email}
+                                phone={phone}
+                                address1={address1}
+                                address2={address2}
+                                city={city}
+                                state={state}
+                                zip={zip}
+                                openModal={openModal}>
+                                
+                    <ContactModal openModal={showModal} closeModal={closeModal}/>
+
+                </ContactDetails>
             </UserDashboard>
         </>
     )

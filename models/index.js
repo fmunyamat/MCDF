@@ -18,7 +18,7 @@ if (config.use_env_variable) {
 
 const db = {
     users: user(sequelize, Sequelize),
-    donation: donation(sequelize,Sequelize),
+    donations: donation(sequelize,Sequelize),
     userinfos: userinfo(sequelize,Sequelize)
 };
 

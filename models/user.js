@@ -30,5 +30,10 @@ module.exports = (sequelize,DataTypes) => {
 
     })
 
+    User.associate = function(models) {
+        models.users.hasOne(models.userinfos);
+        models.users.hasMany(models.donations);
+    }
+
     return User;
 }

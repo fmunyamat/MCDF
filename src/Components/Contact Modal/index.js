@@ -17,14 +17,14 @@ export default function ContactModal(props) {
                             <div className="col-6">
                                 <div className="md-form">
                                     <label for="firstName">First name</label>
-                                    <input type="text" className="form-control" value={props.firstName} readonly/>
+                                    <input type="text" className="form-control" value={props.firstName}/>
                                 </div>
                             </div>
                             <div className="col-6">
 
                                 <div className="md-form">
                                     <label for="lastName">Last name</label>
-                                    <input type="text" className="form-control" value={props.lastName} readonly/>
+                                    <input type="text" className="form-control" value={props.lastName}/>
                                 </div>
                             </div>
                         </div>
@@ -32,14 +32,14 @@ export default function ContactModal(props) {
                             <div className="col-6">
                                 <div className="md-form mt-0">
                                     <label for="email">E-mail</label>
-                                    <input type="email" className="form-control" value={props.email} readonly/>
+                                    <input type="email" className="form-control" value={props.email}/>
                                 </div>
                             </div>
 
                             <div className="col-6">
                                 <div className="md-form">
                                     <label for="phoneNumber">Phone Number</label>
-                                    <input type="tel" className="form-control" value={props.phone} readonly/>
+                                    <input type="tel" className="form-control" value={props.phone}/>
                                 </div>
                             </div>
                         </div>
@@ -47,14 +47,14 @@ export default function ContactModal(props) {
                             <div className="col-6">
                                 <div className="md-form mt-0">
                                     <label for="address1">Address 1</label>
-                                    <input type="text" className="form-control" value={props.address1} readonly/>
+                                    <input type="text" className="form-control" value={props.address1}/>
                                 </div>
                             </div>
 
                             <div className="col-6">
                                 <div className="md-form">
                                     <label for="address2">Address 2</label>
-                                    <input type="text" className="form-control" value={props.address2} readonly/>
+                                    <input type="text" className="form-control" value={props.address2}/>
                                 </div>
                             </div>
                         </div>
@@ -62,20 +62,20 @@ export default function ContactModal(props) {
                             <div className="col-5">
                                 <div className="md-form mt-0">
                                     <label for="city">City</label>
-                                    <input type="text" className="form-control" value={props.city} readonly/>
+                                    <input type="text" className="form-control" value={props.city}/>
                                 </div>
                             </div>
 
                             <div className="col-2">
                                 <div className="md-form">
                                     <label for="state">State</label>
-                                    <input type="text" className="form-control" value={props.state} readonly/>
+                                    <input type="text" className="form-control" value={props.state}/>
                                 </div>
                             </div>
                             <div className="col-5">
                                 <div className="md-form">
                                     <label for="zip">Zip</label>
-                                    <input type="text" className="form-control" value={props.zip} readonly/>
+                                    <input type="text" className="form-control" value={props.zip}/>
                                 </div>
                             </div>
                         </div>

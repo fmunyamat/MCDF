@@ -32,14 +32,13 @@ module.exports = (sequelize,DataTypes) => {
         },
 
         zip: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         }
 
     })
 
     UserInfo.associate = function(models) {
-        models.userinfos.belongsTo(models.users, {foreignKey: 'userinfo_id'});
-        models.users.hasOne(models.userinfos, {foreignKey: 'user_id'});
+        models.userinfos.belongsTo(models.users);
     }
     
 

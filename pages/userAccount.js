@@ -36,12 +36,15 @@ export default function UserAccount() {
                 if (res.data.status === 401) {
                     router.push('/login');
                 } else {
-                    setFirstName(res.data.firstName);
-                    setLastName(res.data.lastName);
-                    setEmail(res.data.email);
-                    // console.log(res.data);
-                    // setUserData(res.data);
-                    // setLogin(`${res.data.firstName} ${res.data.lastName}`)
+                    setFirstName(res.data[0].firstName);
+                    setLastName(res.data[0].lastName);
+                    setEmail(res.data[0].email);
+                    setPhone(res.data[1].phone_number);
+                    setAddress1(res.data[1].address1);
+                    setAddress2(res.data[1].address2);
+                    setCity(res.data[1].city);
+                    setState(res.data[1].state);
+                    setZip(res.data[1].zip)
                 }
             })
     }, [])

@@ -20,5 +20,9 @@ module.exports = (sequelize,DataTypes) => {
 
     })
 
+    Donation.associate = function(models) {
+        models.donations.belongsTo(models.users);
+    }
+
     return Donation;
 }

@@ -18,7 +18,7 @@ export default async function (req, res) {
             where: {
                 userID: result.id
             }
-        }).then((res) => userdata[1]=res.dataValues);
+        }).then((res) => userdata[1]=res.dataValues);        
 
         res.send(userdata)
     } catch(e) {

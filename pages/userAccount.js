@@ -54,6 +54,7 @@ export default function UserAccount() {
 
     // Edit Contact Details configuration
     const openModal = () => setShowModal(true);
+    const closeModal = () => setShowModal(false);
 
     const inputChangeState = {
         firstName: (value) => setFirstName(value),
@@ -83,11 +84,12 @@ export default function UserAccount() {
     
 
         // Update contact info from contact modal
-        const handleContactUpdate = () => {
+        const handleContactUpdate = (e) => {
+
+            e.preventDefault();
 
             // E.g. userid is the same as userid: userid
             let contactInfo = { userid, firstName, lastName, email, phone, address1, address2, city, state, zip }
-
 
             axios({
                 method: 'PUT',
@@ -98,7 +100,7 @@ export default function UserAccount() {
                 }
             });
 
-            setShowModal(false);
+            closeModal();
         }
 
     return (
@@ -135,7 +137,8 @@ export default function UserAccount() {
                         zip={zip}
                         zipOnChange={inputOnChange.zip}
                         openModal={showModal}
-                        contactUpdate={handleContactUpdate} />
+                        contactUpdate={handleContactUpdate}
+                        closeModal={closeModal} />
 
                 </ContactDetails>
             </UserDashboard>

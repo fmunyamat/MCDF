@@ -38,7 +38,7 @@ export default function ContactModal(props) {
                                     <div className="col-6">
                                         <div className="md-form">
                                             <label>Phone Number</label>
-                                            <input type="tel" className="form-control" value={props.phone} onChange={props.phoneOnChange}/>
+                                            <input type="phoneNumber" className="form-control" value={props.phone} onChange={props.phoneOnChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@ export default function ContactModal(props) {
                                 </div>
                             </div>
                             <div className="contactRow3">
-                                <button type="button" className="contactButton" onClick={props.contactUpdate}>Save Contact Details</button>
+                                <button type="submit" className="contactButton" onClick={props.contactUpdate}>Save Contact Details</button>
                             </div>
                         </div>
                     </form>

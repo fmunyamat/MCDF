@@ -16,13 +16,13 @@ export default function ContactModal(props) {
                                 <div className="form-row">
                                     <div className="col-6">
                                         <div className="md-form">
-                                            <label for="firstName">First name</label>
+                                            <label>First name</label>
                                             <input type="text" className="form-control" value={props.firstName} onChange={props.firstNameOnChange}/>
                                         </div>
                                     </div>
                                     <div className="col-6">
                                         <div className="md-form">
-                                            <label for="lastName">Last name</label>
+                                            <label>Last name</label>
                                             <input type="text" className="form-control" value={props.lastName} onChange={props.lastNameOnChange}/>
                                         </div>
                                     </div>
@@ -30,14 +30,14 @@ export default function ContactModal(props) {
                                 <div className="form-row contactRow2">
                                     <div className="col-6">
                                         <div className="md-form mt-0">
-                                            <label for="email">E-mail</label>
+                                            <label>E-mail</label>
                                             <input type="email" className="form-control" value={props.email} onChange={props.emailOnChange}/>
                                         </div>
                                     </div>
 
                                     <div className="col-6">
                                         <div className="md-form">
-                                            <label for="phoneNumber">Phone Number</label>
+                                            <label>Phone Number</label>
                                             <input type="tel" className="form-control" value={props.phone} onChange={props.phoneOnChange}/>
                                         </div>
                                     </div>
@@ -45,14 +45,14 @@ export default function ContactModal(props) {
                                 <div className="form-row contactRow2">
                                     <div className="col-6">
                                         <div className="md-form mt-0">
-                                            <label for="address1">Address 1</label>
+                                            <label>Address 1</label>
                                             <input type="text" className="form-control" value={props.address1} onChange={props.address1OnChange}/>
                                         </div>
                                     </div>
 
                                     <div className="col-6">
                                         <div className="md-form">
-                                            <label for="address2">Address 2</label>
+                                            <label>Address 2</label>
                                             <input type="text" className="form-control" value={props.address2} onChange={props.address2OnChange}/>
                                         </div>
                                     </div>
@@ -60,19 +60,19 @@ export default function ContactModal(props) {
                                 <div className="form-row contactRow2">
                                     <div className="col-5">
                                         <div className="md-form mt-0">
-                                            <label for="city">City</label>
+                                            <label>City</label>
                                             <input type="text" className="form-control" value={props.city} onChange={props.cityOnChange}/>
                                         </div>
                                     </div>
                                     <div className="col-2">
                                         <div className="md-form">
-                                            <label for="state">State</label>
+                                            <label>State</label>
                                             <input type="text" className="form-control" value={props.state} onChange={props.stateOnChange}/>
                                         </div>
                                     </div>
                                     <div className="col-5">
                                         <div className="md-form">
-                                            <label for="zip">Zip</label>
+                                            <label>Zip</label>
                                             <input type="text" className="form-control" value={props.zip} onChange={props.zipOnChange}/>
                                         </div>
                                     </div>

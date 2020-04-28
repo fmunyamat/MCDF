@@ -84,8 +84,6 @@ export default function UserAccount() {
 
         // Update contact info from contact modal
         const handleContactUpdate = () => {
-            
-        
 
             // E.g. userid is the same as userid: userid
             let contactInfo = { userid, firstName, lastName, email, phone, address1, address2, city, state, zip }

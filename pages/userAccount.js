@@ -6,6 +6,7 @@ import UserAccountNavbar from '../src/Components/User Account Navbar';
 import UserDashboard from '../src/Components/User Dashboard';
 import ContactDetails from '../src/Components/Contact Details';
 import ContactModal from '../src/Components/Contact Modal';
+import DonationDash from '../src/Components/Donation Dashboard';
 
 export default function UserAccount() {
 
@@ -20,6 +21,7 @@ export default function UserAccount() {
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [zip, setZip] = useState("");
+    const [page, setPage] = useState('');
 
     // Edit Contact Details Modal
     const [showModal, setShowModal] = useState(false);
@@ -80,67 +82,75 @@ export default function UserAccount() {
         zip: (e) => inputChangeState.zip(e.target.value)
     }
 
-    
-    
+    // Update contact info from contact modal
+    const handleContactUpdate = (e) => {
 
-        // Update contact info from contact modal
-        const handleContactUpdate = (e) => {
+        e.preventDefault();
 
-            e.preventDefault();
+        // E.g. userid is the same as userid: userid
+        let contactInfo = { userid, firstName, lastName, email, phone, address1, address2, city, state, zip }
 
-            // E.g. userid is the same as userid: userid
-            let contactInfo = { userid, firstName, lastName, email, phone, address1, address2, city, state, zip }
+        axios({
+            method: 'PUT',
+            url: '/api/contactupdate',
+            data: contactInfo,
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
 
-            axios({
-                method: 'PUT',
-                url: '/api/contactupdate',
-                data: contactInfo,
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            });
+        closeModal();
+    }
 
-            closeModal();
-        }
+    const pageToggle = {
+        contact: <ContactDetails firstName={firstName}
+            lastName={lastName}
+            email={email}
+            phone={phone}
+            address1={address1}
+            address2={address2}
+            city={city} ß
+            state={state}
+            zip={zip}
+            openModal={openModal}>
+
+            <ContactModal firstName={firstName}
+                firstNameOnChange={inputOnChange.firstName}
+                lastName={lastName}
+                lastNameOnChange={inputOnChange.lastName}
+                email={email}
+                emailOnChange={inputOnChange.email}
+                phone={phone}
+                phoneOnChange={inputOnChange.phoneNumber}
+                address1={address1}
+                address1OnChange={inputOnChange.address1}
+                address2={address2}
+                address2OnChange={inputOnChange.address2}
+                city={city}
+                cityOnChange={inputOnChange.city}
+                state={state}
+                stateOnChange={inputOnChange.state}
+                zip={zip}
+                zipOnChange={inputOnChange.zip}
+                openModal={showModal}
+                contactUpdate={handleContactUpdate}
+                closeModal={closeModal} />
+
+        </ContactDetails>
+        ,
+        donation: <DonationDash />
+    }
+
+    const showContactDetails = () => setPage(pageToggle.contact);
+    const showDonationHistory = () => setPage(pageToggle.donation);
 
     return (
         <>
             <UserAccountNavbar />
-            <UserDashboard>
-                <ContactDetails firstName={firstName}
-                    lastName={lastName}
-                    email={email}
-                    phone={phone}
-                    address1={address1}
-                    address2={address2}
-                    city={city}
-                    state={state}
-                    zip={zip}
-                    openModal={openModal}>
+            <UserDashboard contactClick={showContactDetails} donationClick={showDonationHistory}>
 
-                    <ContactModal firstName={firstName}
-                        firstNameOnChange={inputOnChange.firstName}
-                        lastName={lastName}
-                        lastNameOnChange={inputOnChange.lastName}
-                        email={email}
-                        emailOnChange={inputOnChange.email}
-                        phone={phone}
-                        phoneOnChange={inputOnChange.phoneNumber}
-                        address1={address1}
-                        address1OnChange={inputOnChange.address1}
-                        address2={address2}
-                        address2OnChange={inputOnChange.address2}
-                        city={city}
-                        cityOnChange={inputOnChange.city}
-                        state={state}
-                        stateOnChange={inputOnChange.state}
-                        zip={zip}
-                        zipOnChange={inputOnChange.zip}
-                        openModal={showModal}
-                        contactUpdate={handleContactUpdate}
-                        closeModal={closeModal} />
+                {page === '' ? pageToggle.contact : page}
 
-                </ContactDetails>
             </UserDashboard>
         </>
     )

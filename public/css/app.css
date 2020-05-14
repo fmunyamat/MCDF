@@ -13,8 +13,20 @@
     box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
 }
 
+.loginToggle .fontIcon {
+    margin-right: 10px;
+    color: white;
+}
+
 .fontIcon {
     margin-right: 5px;
+    color: #025289;
+    /* margin-left: -20px; */
+}
+
+.ua-button:hover {
+    color: white;
+    background-color: #758285;
 }
 
 .loginToggle {
@@ -206,17 +218,11 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
     font-weight: 700;
 }
 
-.ua-pillMenu {
-    text-align: center;
-    background-color: white;
-    margin: 20px 0 0 40px;
-    height: 69vh;
-    border-radius: 20px;
+.row .ua-pillMenu {
+    padding: 0;
+    background-color: #025289;
+    height: 86.5vh;
     font-family: 'Raleway';
-
-    /* -webkit-box-shadow: -1px 0px 18px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 0px 18px -4px rgba(0,0,0,0.75);
-    box-shadow: -1px 0px 18px -4px rgba(0,0,0,0.75); */
 }
 
 .ua-menuLink {
@@ -234,6 +240,33 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
     color: black;
 }
 
+.ua-pillMenu .contactLink, .ua-pillMenu .donationLink {
+    margin-top: 50px;
+}
+
+.contactLink a, .donationLink a {
+    font-family: 'Raleway';
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.contactLink a:hover, .donationLink a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.contactLink .fontIcon {
+    margin-left: 15px;
+}
+
+.donationLink .fontIcon {
+    margin-left: 20px;
+}
+
+.contactLink .test:visited {
+    background-color: #536d48;
+}
 .row .ua-dataDash {
     padding: 0;
     height: 70vh;
@@ -328,4 +361,13 @@ box-shadow: 0px 9px 12px 1px rgba(0,0,0,0.75);
 
 .close span{
     color: white;
+}
+
+.donationDash .container {
+    margin: 0;
+    padding: 0;
+}
+
+.donationIcon {
+    background-color: #536d48;
 }
